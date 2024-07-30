@@ -7,7 +7,8 @@ public class App {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
-
+        int[] arrResult = new int[10];
+        int count = 0;
         int result = 0;
         while (true) {
             System.out.print("첫 번째 숫자를 입력하세요 : ");
@@ -21,12 +22,15 @@ public class App {
 
             if (operator == '+') {
                 result = num1 + num2;
+                arrResult[count++] = result;
 
             } else if (operator == '-') {
                 result = num1 - num2;
+                arrResult[count++] = result;
 
             } else if (operator == '*') {
                 result = num1 * num2;
+                arrResult[count++] = result;
 
             } else if (operator == '/') {
                 if (num2 == 0) {
@@ -34,6 +38,8 @@ public class App {
                     continue;
                 }
                 result = num1 / num2;
+                arrResult[count++] = result;
+
 
             } else if (operator == '%') {
                 if (num2 == 0) {
@@ -41,11 +47,18 @@ public class App {
                     continue;
                 }
                 result = num1 % num2;
+                arrResult[count++] = result;
+
 
             } else {
                 System.out.println("사칙연산을 잘못입력하셨습니다.");
             }
             System.out.println("결과: " + result);
+
+            System.out.println("저장 되는지 확인 : ");
+            for (int i : arrResult) {
+                System.out.println(arrResult[i]);
+            }
 
             System.out.println("더 계산하시겠습니까? (exit 입력 시 종료)");
             String strExit = sc.next();
