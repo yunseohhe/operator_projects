@@ -15,5 +15,23 @@ public class App {
         System.out.print("사칙연산 기호를 입력하세요 : ");
         char operator = sc.next().charAt(0);
 
+        int result = 0;
+        if (operator == '+') {
+            result = num1 + num2;
+
+        } else if (operator == '-') {
+            result = num1 - num2;
+
+        } else if (operator == '*') {
+            result = num1 * num2;
+
+        } else if (operator == '/') {
+            result = num1 / num2;
+
+        } else if (operator == '%') {
+            result = num1 % num2;
+
+        }
+        System.out.println("결과: " + result);
     }
 }
