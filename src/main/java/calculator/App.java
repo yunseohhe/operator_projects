@@ -55,9 +55,13 @@ public class App {
             }
             System.out.println("결과: " + result);
 
-            System.out.println("저장 되는지 확인 : ");
-            for (int i : arrResult) {
-                System.out.println(arrResult[i]);
+            if (count >= 9) {
+                for (int i = 0; i < arrResult.length - 1; i++) {
+                    arrResult[i] = arrResult[i + 1];
+                }
+                arrResult[count] = result;
+            } else {
+                arrResult[count++] = result;
             }
 
             System.out.println("더 계산하시겠습니까? (exit 입력 시 종료)");
@@ -65,6 +69,8 @@ public class App {
             if (strExit.equals("exit")) {
                 break;
             }
+
         }
     }
+}
 }
